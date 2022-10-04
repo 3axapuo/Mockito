@@ -34,7 +34,7 @@ public class MessageSenderImplTest {
     @Test
     @BeforeEach
     @DisplayName("ТЕСТ, вначале создаем Mockito и HashMap")
-    void creatingClassesObjects() {
+    public void creatingClassesObjects() {
         geoService = Mockito.mock(GeoServiceImpl.class);
         localizationService = Mockito.mock(LocalizationServiceImpl.class);
         messageSender = Mockito.mock(MessageSenderImpl.class);
@@ -43,7 +43,7 @@ public class MessageSenderImplTest {
 
     @Test
     @DisplayName("ТЕСТ, проверка по IP адресу принадлежности к локации в РФ")
-    void testSendMessage() throws ParserConfigurationException, IOException, SAXException {
+    public void testSendMessage() throws ParserConfigurationException, IOException, SAXException {
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
         DocumentBuilder docBuilder = dbf.newDocumentBuilder();
 
@@ -88,7 +88,7 @@ public class MessageSenderImplTest {
         }
         headers.put(MessageSenderImpl.IP_ADDRESS_HEADER, ipAddress);
 
-        // ЗАДАЧА №2, Проверить, что MessageSenderImpl всегда отправляет только русский текст, если ip относится к Российскому сегменту адресов.
+        // ЗАДАЧА №2, проверить, что MessageSenderImpl всегда отправляет только русский текст, если ip относится к Российскому сегменту адресов.
         if (ipAddress.equals("172.0.32.11")) {
 
             // Проверка с помощью Mockito.

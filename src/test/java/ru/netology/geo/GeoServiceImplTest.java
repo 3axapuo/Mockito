@@ -16,14 +16,14 @@ public class GeoServiceImplTest {
     @Test
     @BeforeEach
     @DisplayName("ТЕСТ, вначале создаем Mockito")
-    void creatingClassesObjects() {
+    public void creatingClassesObjects() {
         geoService = Mockito.mock(GeoServiceImpl.class);
     }
 
     // ЗАДАЧА №1, Проверить работу метода public Location byIp(String ip)
     @Test
     @DisplayName("ТЕСТ, проверка определения локации по IP")
-    void testDeterminesTheLocationByIp() {
+    public void testDeterminesTheLocationByIp() {
         String ipAddress = "172.0.32.11"; // 96.44.183.149
 
         if (ipAddress.equals("172.0.32.11")) {
